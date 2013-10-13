@@ -3,7 +3,10 @@ WatayaNotification notifis a newly published book written by 綿矢りさ to sen
 
 
 ## Usage
-`$ ./wataya_notify.pl`
+`./wataya_notify.pl`
+
+![](https://dl.dropboxusercontent.com/u/8677629/gunzo.png)   
+![](https://dl.dropboxusercontent.com/u/8677629/shincho.png)
 
 ## Dependencies
 * terminal-notifier (tested by v1.4.2)
