@@ -1,10 +1,9 @@
 # WatayaSan
-WatayaSannotifis a newly published book written by 綿矢りさ to send your OSX Notification center.
+WatayaSan notifis a newly published book written by 綿矢りさ to send your OSX Notification center.
 
 
 ## Usage
-`./watayasan.pl`
-
+`./watayasan.pl`   
 ![](https://dl.dropboxusercontent.com/u/8677629/gunzo.png)   
 ![](https://dl.dropboxusercontent.com/u/8677629/shincho.png)
 
