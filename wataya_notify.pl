@@ -1,0 +1,86 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use utf8;
+use Encode;
+use File::Which;
+use LWP::UserAgent;
+use HTML::TreeBuilder;
+
+if (which("terminal-notifier")) {
+    find_from_gunzo();
+    find_from_shincho();
+} else {
+    die "gem install terminal-notifier";
+}
+
+
+sub find_from_shincho {
+    my $url = 'http://www.shinchosha.co.jp/shincho/newest/';
+    my $user_agent = 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-US)';
+    my $ua = LWP::UserAgent->new(agent=>$user_agent);
+    my $res = $ua->get($url);
+
+    if ($res->is_success) {
+        my $content = $res->content();
+        my $tree = HTML::TreeBuilder->new();
+        $tree->parse($content);
+    
+        my @retrieve = qw//;
+        for my $tag ($tree->look_down('class', "indexTextA")) {
+            push @retrieve, $tag->as_text();
+        }
+        for my $tag ($tree->look_down('class', 'indexTextB')) {
+            push @retrieve, $tag->as_text();
+        }
+        for my $tag ($tree->look_down('class', 'indexTextK')) {
+            push @retrieve, $tag->as_text();
+        }
+        for my $entory (@retrieve) {
+            if (_is_wataya($entory)) {
+                my $notify = encode_utf8("新潮から新作お知らせ");
+                _notify($entory, $notify);
+            }
+        }
+        if (scalar @retrieve > 0) {
+            _notify("新作はありません", "新潮からお知らせ");
+        }
+    }
+}
+    
+sub find_from_gunzo {
+    my $url = 'http://gunzo.kodansha.co.jp/';
+    my $user_agent = 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-US)';
+    my $ua = LWP::UserAgent->new(agent=>$user_agent);
+    my $res = $ua->get($url);
+    if ($res->is_success) {
+        my $content = $res->content();
+        my $tree = HTML::TreeBuilder->new();
+        $tree->parse($content);
+        for my $pick_up_title ($tree->look_down('class', 'contents')->find('p')) {
+            my $title = $pick_up_title->as_text();
+            if (_is_wataya($title)) {
+                my $notify = encode_utf8("群像から新作お知らせ");
+                _notify($title, $notify);
+            }
+        }
+    } else {
+        die $res->status_line();
+    }
+}
+
+sub _is_wataya {
+    my $c = shift;
+    my $ma = encode_utf8('綿矢りさ');
+    if ($c =~ m/$ma/g) {
+        return 1;
+    }
+}
+
+sub _notify {
+    my $content = shift;
+    my $title = shift;
+    system("terminal-notifier -message $content -title $title >/dev/null");
+}
+
