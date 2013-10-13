@@ -11,5 +11,5 @@ WatayaSan notifies a newly published book written by 綿矢りさ to send your O
 * 群像
 
 ## Dependencies
-* `gem install terminal-notifier` if not installled it.
-* Encode, File::Which, LWP::UserAgent and HTML::TreeBuilder of perl modules are required.
+* `gem install terminal-notifier` if not installed.
+* `Encode`, `File::Which`, `LWP::UserAgent` and `HTML::TreeBuilder` of Perl modules are required.
