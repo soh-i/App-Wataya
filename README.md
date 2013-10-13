@@ -1,5 +1,5 @@
 # WatayaSan
-WatayaSan notifis a newly published book written by 綿矢りさ to send your OSX Notification center.
+WatayaSan notifies a newly published book written by 綿矢りさ to send your OSX Notification center.
 
 
 ## Usage
