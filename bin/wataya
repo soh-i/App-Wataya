@@ -15,7 +15,6 @@ if (which("terminal-notifier")) {
     die "gem install terminal-notifier";
 }
 
-
 sub find_from_shincho {
     my $url = 'http://www.shinchosha.co.jp/shincho/newest/';
     my $user_agent = 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-US)';
