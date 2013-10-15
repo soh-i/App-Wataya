@@ -12,7 +12,7 @@ make install
 ```
         
 ## USAGE
-* run `wataya` command, the following notification on your Mac.
+* run `wataya` command, the following notification on your Mac.   
 ![](https://dl.dropboxusercontent.com/u/8677629/gunzo.png)   
 ![](https://dl.dropboxusercontent.com/u/8677629/shincho.png)
 
