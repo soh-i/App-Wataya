@@ -1,8 +1,18 @@
 # WatayaSan
 WatayaSan notifies a newly published book written by 綿矢りさ to send your OSX Notification center.
 
+## INSTALLATION
+To install this module, run the following commands:
+
+```
+perl Makefile.PL
+make
+make test
+make install
+```
+        
 ## Usage
-`% ./watayasan`   
+`$ ./wataya`   
 ![](https://dl.dropboxusercontent.com/u/8677629/gunzo.png)   
 ![](https://dl.dropboxusercontent.com/u/8677629/shincho.png)
 
@@ -12,4 +22,6 @@ WatayaSan notifies a newly published book written by 綿矢りさ to send your O
 
 ## Dependencies
 * `gem install terminal-notifier` if not installed.
-* `Encode`, `File::Which`, `LWP::UserAgent` and `HTML::TreeBuilder` of Perl modules are required.
+
+## LICENSE AND COPYRIGHT
+Copyright (C) 2013 yukke
