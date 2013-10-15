@@ -6,7 +6,7 @@ use warnings FATAL => 'all';
 
 =head1 NAME
 
-App::Wataya notifies a newly published book written by 綿矢りさ to send your OSX Notification center.
+App::Wataya notifies a newly published book written by RISA WATAYA to send your OSX Notification center.
 
 =head1 VERSION
 
