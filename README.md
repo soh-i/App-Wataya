@@ -1,5 +1,5 @@
 # App::Wataya
-WatayaSan notifies a newly published book written by 綿矢りさ to send your OSX Notification center.
+WatayaSan notifies a newly published book written by 綿矢りさ to send your OSX Notification center, which is available in **Mac OS X 10.8 and higher**.
 
 ## INSTALLATION
 To install this module, run the following commands:
